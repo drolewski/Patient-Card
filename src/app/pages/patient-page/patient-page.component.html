@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title class="patient-info">
+    <span>Patient {{patientId}}</span>
+  </mat-card-title>
+</mat-card>
+<mat-card>
+  <mat-card-title>Details</mat-card-title>
+  <app-patient-details [patientId]="patientId"></app-patient-details>
+</mat-card>
+<mat-card>
+  <mat-card-title>Observations
+    <app-observation-filter [patientId]="patientId" [observationsBus]="observationsBus"></app-observation-filter>
+  </mat-card-title>
+  <app-patient-observation [observationsBus]="observationsBus"></app-patient-observation>
+</mat-card>
+<mat-card>
+  <mat-card-title>Medication requests</mat-card-title>
+  <app-patient-medication *ngIf="medicationRequests" [medicationRequest]="medicationRequests"></app-patient-medication>
+</mat-card>
