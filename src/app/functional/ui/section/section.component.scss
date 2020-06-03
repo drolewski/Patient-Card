@@ -1,0 +1,15 @@
+:host {
+  display: grid;
+  grid-template-rows: 20px auto;
+  grid-row-gap: 7px;
+  margin: 6px;
+  .title {
+    color: black;
+    font-size: 24px;
+  }
+
+  .content {
+    display: block;
+    height: fit-content;
+  }
+}
