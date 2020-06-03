@@ -1,0 +1,15 @@
+<mgl-timeline [toggle]="false" [alternate]="true" *ngIf="isAnyData; else noData">
+  <mgl-timeline-entry *ngFor="let entry of flatMedicationRequests">
+    <mgl-timeline-entry-header>
+      <div>{{entry.description}}</div>
+    </mgl-timeline-entry-header>
+    <mgl-timeline-entry-content>
+      <div> {{entry.medicationConcept}}</div>
+    </mgl-timeline-entry-content>
+    <mgl-timeline-entry-dot [color]="'accent'" [size]="30"></mgl-timeline-entry-dot>
+    <mgl-timeline-entry-side>{{entry.authoredOn | date:'short'}}</mgl-timeline-entry-side>
+  </mgl-timeline-entry>
+</mgl-timeline>
+<ng-template #noData>
+  <app-not-found foundDataName="Medication requests"></app-not-found>
+</ng-template>
